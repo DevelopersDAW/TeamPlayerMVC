@@ -2,7 +2,7 @@ package cat.proven.teamplayer.model;
 
 /**
  *
- * @author Jordi & David
+ * @author Jordi and David
  */
 public class Team {
 

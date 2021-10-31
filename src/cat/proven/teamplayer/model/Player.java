@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  *
- * @author Jordi & David
+ * @author Jordi and David
  */
 public class Player {
     private long id;

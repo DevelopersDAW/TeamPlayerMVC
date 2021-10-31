@@ -7,15 +7,15 @@ import java.util.List;
 
 /**
  *
- * @author Jordi & David
+ * @author Jordi and David
  */
 public interface PlayerDaoInterface {
-    
+
     /**
      * Selects all players from data source
      *
-     * @return list of all players or empty list if none if found or null in case
-     * of error
+     * @return list of all players or empty list if none if found or null in
+     * case of error
      */
     public List<Player> selectAll();
 
@@ -33,7 +33,8 @@ public interface PlayerDaoInterface {
      * Selects a player given name
      *
      * @param name the name of the player
-     * @return a list of players or empty in case not found, null in case of error
+     * @return a list of players or empty in case not found, null in case of
+     * error
      * @throws ParameterNull in case parameter passed is null a exeception will
      * be throw
      */
@@ -80,5 +81,5 @@ public interface PlayerDaoInterface {
      * be throw
      */
     public int delete(Player player) throws ParameterNull;
-    
+
 }

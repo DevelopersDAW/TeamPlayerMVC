@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author Jordi & David
+ * @author Jordi and David
  */
 public class TeamPlayerModel {
 

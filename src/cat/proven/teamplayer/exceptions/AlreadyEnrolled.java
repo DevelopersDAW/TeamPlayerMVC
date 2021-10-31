@@ -2,10 +2,14 @@ package cat.proven.teamplayer.exceptions;
 
 /**
  *
- * @author Jordi & David
+ * @author Jordi and David
  */
 public class AlreadyEnrolled extends Exception {
 
+    /**
+     * 
+     * @param message string discribing exception
+     */
     public AlreadyEnrolled(String message) {
         super(message);
     }
