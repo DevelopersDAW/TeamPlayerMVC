@@ -4,10 +4,9 @@ package cat.proven.teamplayer.exceptions;
  *
  * @author Jordi & David
  */
-public class DuplicateExeception extends Exception {
+public class AlreadyExistsTeam extends Exception {
 
-    public DuplicateExeception(String message) {
+    public AlreadyExistsTeam(String message) {
         super(message);
     }
-
 }
