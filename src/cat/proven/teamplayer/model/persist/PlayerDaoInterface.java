@@ -50,7 +50,7 @@ public interface PlayerDaoInterface {
     public List<Player> selectWhereTeamId(long teamId) throws ParameterNull;
 
     /**
-     * Inserts a new team
+     * Inserts a new player
      *
      * @param player the player to add
      * @return 1 if its correctly inserted or -1 in case of error
@@ -62,7 +62,7 @@ public interface PlayerDaoInterface {
     public int insert(Player player) throws ParameterNull, AlreadyExistsPlayer;
 
     /**
-     * Updates the team given
+     * Updates the player given
      *
      * @param player the player to update their data
      * @return 1 if its correctly updated or -1 in case of error
@@ -72,7 +72,7 @@ public interface PlayerDaoInterface {
     public int update(Player player) throws ParameterNull;
 
     /**
-     * Deletes the team given
+     * Deletes the player given
      *
      * @param player the player to delete
      * @return 1 if its correctly updated or -1 in case of error
