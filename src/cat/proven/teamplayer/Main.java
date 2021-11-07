@@ -6,8 +6,12 @@ package cat.proven.teamplayer;
  */
 public class Main {
 
+    /**
+     * Principal function
+     *
+     * @param args array
+     */
     public static void main(String[] args) {
-        // TODO code application logic here
     }
 
 }

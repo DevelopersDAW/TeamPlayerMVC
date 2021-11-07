@@ -3,6 +3,10 @@ package cat.proven.teamplayer.model;
 import cat.proven.teamplayer.exceptions.DuplicateExeception;
 import cat.proven.teamplayer.exceptions.ParameterNull;
 import cat.proven.teamplayer.exceptions.AlreadyEnrolled;
+import cat.proven.teamplayer.model.persist.PlayerDaoInterface;
+import cat.proven.teamplayer.model.persist.PlayerDaoList;
+import cat.proven.teamplayer.model.persist.TeamDaoInterface;
+import cat.proven.teamplayer.model.persist.TeamDaoList;
 import java.util.List;
 
 /**
@@ -10,6 +14,18 @@ import java.util.List;
  * @author Jordi and David
  */
 public class TeamPlayerModel {
+
+    // DAO for Friend objects
+    private final PlayerDaoInterface playerDao;
+    private final TeamDaoInterface teamDao;
+
+    /**
+     * Constructor initialize DAO interfaces
+     */
+    public TeamPlayerModel() {
+        this.playerDao = PlayerDaoList.getInstance();
+        this.teamDao = TeamDaoList.getInstance();
+    }
 
     /**
      * Retrieves a list of all teams from data source.
