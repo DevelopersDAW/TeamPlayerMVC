@@ -197,7 +197,7 @@ public class TeamPlayerModel {
      * @throws AlreadyEnrolled if player is already enrolled a exception will be
      * throw
      */
-    public int enrollPlayerToTeam(Team team, Player player) throws ParameterNull, AlreadyEnrolled {
+    public int enrolPlayerToTeam(Team team, Player player) throws ParameterNull, AlreadyEnrolled {
         int result = 0;
         //TODO
         return result;
@@ -212,7 +212,7 @@ public class TeamPlayerModel {
      * @throws ParameterNull if team or player given are null a exception will
      * be throw
      */
-    public int unenrollPlayerToTeam(Team team, Player player) throws ParameterNull {
+    public int unenrolPlayerToTeam(Team team, Player player) throws ParameterNull {
         int result = 0;
         //TODO
         return result;
