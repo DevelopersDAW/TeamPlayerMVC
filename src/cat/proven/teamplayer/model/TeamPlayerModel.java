@@ -55,9 +55,8 @@ public class TeamPlayerModel {
      *
      * @param name the name to search a specific team
      * @return the team with the given name or null in case not found
-     * @throws ParameterNull if the given name is NULL a exception will be throw
      */
-    public Team findTeamByName(String name) throws ParameterNull {
+    public Team findTeamByName(String name) {
         Team team = null;
         //TODO
         return team;
@@ -68,9 +67,8 @@ public class TeamPlayerModel {
      *
      * @param category the categoy to search teams
      * @return a list of teams given a category, null list in case not found
-     * @throws ParameterNull if given category is NULL a exception will be throw
      */
-    public List<Team> findTeamsByCategory(String category) throws ParameterNull {
+    public List<Team> findTeamsByCategory(String category) {
         List<Team> teams = null;
         //TODO
         return teams;
@@ -84,9 +82,8 @@ public class TeamPlayerModel {
      * @return 1 if successfully added, or -1 otherwise
      * @throws DuplicateExeception if team name already exists a exception will
      * be throw
-     * @throws ParameterNull if parameter given is null
      */
-    public int addTeam(Team team) throws DuplicateExeception, ParameterNull {
+    public int addTeam(Team team) throws DuplicateExeception{
         int result = 0;
         //TODO
         return result;
@@ -97,9 +94,8 @@ public class TeamPlayerModel {
      *
      * @param team the team to modify
      * @return 1 if successfully modified or -1 in case of error
-     * @throws ParameterNull if team given is null a exception will be throw
      */
-    public int modifyTeam(Team team) throws ParameterNull {
+    public int modifyTeam(Team team) {
         int result = 0;
         //TODO
         return result;
@@ -110,9 +106,8 @@ public class TeamPlayerModel {
      *
      * @param team the team to remove
      * @return 1 if successfully removed or -1 in case of error
-     * @throws ParameterNull if team given is null a exception will be throw
      */
-    public int removeTeam(Team team) throws ParameterNull {
+    public int removeTeam(Team team) {
         int result = 0;
         //TODO
         return result;
@@ -131,14 +126,12 @@ public class TeamPlayerModel {
     }
 
     /**
-     * Retrieves a single player given a fullname
+     * Retrieves a single player given a full name.
      *
      * @param fullname is the full name of the player to search
      * @return a list of players with the given full name
-     * @exception ParameterNull if fullname given is null a exception will be
-     * throw
      */
-    public Player findPlayerByFullName(String fullname) throws ParameterNull {
+    public Player findPlayerByFullName(String fullname) {
         Player player = null;
         //TODO
         return player;
@@ -152,7 +145,7 @@ public class TeamPlayerModel {
      * not found
      * @throws ParameterNull if team given is null a exception will be throw
      */
-    public List<Player> findPlayersByTeam(Team team) throws ParameterNull {
+    public List<Player> findPlayersByTeam(Team team) {
         List<Player> players = null;
         //TODO
         return players;
@@ -178,10 +171,8 @@ public class TeamPlayerModel {
      *
      * @param player is the player to modify
      * @return 1 if successfully modified or -1 otherwise
-     * @throws ParameterNull if team name given is null an exception will be
-     * thrown
      */
-    public int modifyPlayer(Player player) throws ParameterNull {
+    public int modifyPlayer(Player player) {
         int result = 0;
         //TODO
         return result;
@@ -193,11 +184,10 @@ public class TeamPlayerModel {
      * @param team is the team to join the player introduced
      * @param player is the player that will join to the team introduced
      * @return 1 if the player is enrolled in the team or -1 otherwise
-     * @throws ParameterNull if team or player given are null
      * @throws AlreadyEnrolled if player is already enrolled a exception will be
      * throw
      */
-    public int enrolPlayerToTeam(Team team, Player player) throws ParameterNull, AlreadyEnrolled {
+    public int enrolPlayerToTeam(Team team, Player player) throws AlreadyEnrolled {
         int result = 0;
         //TODO
         return result;
@@ -209,10 +199,8 @@ public class TeamPlayerModel {
      * @param team is the team to unenrol the player introduced
      * @param player is the player that will unenrol the team introduced
      * @return 1 if the player is unenrolled of the team or -1 otherwise
-     * @throws ParameterNull if team or player given are null a exception will
-     * be throw
      */
-    public int unenrolPlayerToTeam(Team team, Player player) throws ParameterNull {
+    public int unenrolPlayerToTeam(Team team, Player player) {
         int result = 0;
         //TODO
         return result;
