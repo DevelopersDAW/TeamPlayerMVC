@@ -143,7 +143,6 @@ public class TeamPlayerModel {
      * @param team is the team of the players to search
      * @return a list of players that belongs to the given team or null in case
      * not found
-     * @throws ParameterNull if team given is null a exception will be throw
      */
     public List<Player> findPlayersByTeam(Team team) {
         List<Player> players = null;
@@ -158,9 +157,8 @@ public class TeamPlayerModel {
      * @return 1 if successfully added or -1 otherwise
      * @throws DuplicateExeception if team name given is null or if player
      * already exists in data source a exception will be throw
-     * @throws ParameterNull if player given is null an exception will be thrown
      */
-    public int addPlayer(Player player) throws DuplicateExeception, ParameterNull {
+    public int addPlayer(Player player) throws DuplicateExeception {
         int result = 0;
         //TODO
         return result;

@@ -39,38 +39,38 @@ public class PlayerDaoList implements PlayerDaoInterface {
     }
 
     @Override
-    public Player selectWhereId(long id) throws ParameterNull {
+    public Player selectWhereId(long id) {
         //TODO
         return null;
     }
 
     @Override
-    public List<Player> selectWhereName(String name) throws ParameterNull {
+    public List<Player> selectWhereName(String name) {
         //TODO
         return null;
     }
 
     @Override
-    public List<Player> selectWhereTeamId(long teamId) throws ParameterNull {
+    public List<Player> selectWhereTeamId(long teamId) {
         //TODO
         return null;
     }
 
     @Override
-    public int insert(Player player) throws ParameterNull, AlreadyExistsPlayer {
+    public int insert(Player player)throws AlreadyExistsPlayer {
         //TODO
         return 0;
 
     }
 
     @Override
-    public int update(Player player) throws ParameterNull {
+    public int update(Player player) {
         //TODO
         return 0;
     }
 
     @Override
-    public int delete(Player player) throws ParameterNull {
+    public int delete(Player player) {
         //TODO
         return 0;
     }

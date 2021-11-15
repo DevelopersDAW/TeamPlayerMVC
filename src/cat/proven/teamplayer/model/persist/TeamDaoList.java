@@ -47,37 +47,37 @@ public class TeamDaoList implements TeamDaoInterface {
     }
 
     @Override
-    public Team selectWhereName(String name) throws ParameterNull {
+    public Team selectWhereName(String name) {
         //TODO
         return null;
     }
 
     @Override
-    public List<Team> selectWhereCoach(String coach) throws ParameterNull {
+    public List<Team> selectWhereCoach(String coach) {
         //TODO
         return null;
     }
 
     @Override
-    public List<Team> selectWhereCategory(String category) throws ParameterNull {
+    public List<Team> selectWhereCategory(String category) {
         //TODO
         return null;
     }
 
     @Override
-    public int insert(Team team) throws ParameterNull, AlreadyExistsTeam {
+    public int insert(Team team) throws AlreadyExistsTeam {
         //TODO
         return 0;
     }
 
     @Override
-    public int update(Team team) throws ParameterNull {
+    public int update(Team team) {
         //TODO
         return 0;
     }
 
     @Override
-    public int delete(Team team) throws ParameterNull, TeamHavePlayers {
+    public int delete(Team team) throws TeamHavePlayers {
         //TODO
         return 0;
     }
