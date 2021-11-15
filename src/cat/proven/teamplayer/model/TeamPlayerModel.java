@@ -146,7 +146,7 @@ public class TeamPlayerModel {
      * @param fullname is the full name of the player to search
      * @return a list of players with the given full name
      */
-    public Player findPlayerByFullName(String fullname) {
+    public List<Player> findPlayerByFullName(String fullname) {
         List<Player> players = null;
         if (fullname != null) {
             players = playerDao.selectWhereName(fullname);
