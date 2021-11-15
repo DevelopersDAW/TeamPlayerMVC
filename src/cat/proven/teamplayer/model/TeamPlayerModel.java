@@ -1,8 +1,9 @@
 package cat.proven.teamplayer.model;
 
-import cat.proven.teamplayer.exceptions.DuplicateExeception;
-import cat.proven.teamplayer.exceptions.ParameterNull;
+import cat.proven.teamplayer.exceptions.AlreadyExistsPlayer;
+import cat.proven.teamplayer.exceptions.AlreadyExistsTeam;
 import cat.proven.teamplayer.exceptions.AlreadyEnrolled;
+import cat.proven.teamplayer.exceptions.TeamHavePlayers;
 import cat.proven.teamplayer.model.persist.PlayerDaoInterface;
 import cat.proven.teamplayer.model.persist.PlayerDaoList;
 import cat.proven.teamplayer.model.persist.TeamDaoInterface;
@@ -34,7 +35,7 @@ public class TeamPlayerModel {
      */
     public List<Team> findAllTeams() {
         List<Team> teams = null;
-        //TODO
+        teams = teamDao.selectAll();
         return teams;
     }
 
@@ -46,7 +47,9 @@ public class TeamPlayerModel {
      */
     public Team findTeamById(long id) {
         Team team = null;
-        //TODO
+        if (id != 0) {
+            team = teamDao.selectWhereId(id);
+        }
         return team;
     }
 
@@ -58,7 +61,9 @@ public class TeamPlayerModel {
      */
     public Team findTeamByName(String name) {
         Team team = null;
-        //TODO
+        if (name != null) {
+            team = teamDao.selectWhereName(name);
+        }
         return team;
     }
 
@@ -70,7 +75,9 @@ public class TeamPlayerModel {
      */
     public List<Team> findTeamsByCategory(String category) {
         List<Team> teams = null;
-        //TODO
+        if (category != null) {
+            teams = teamDao.selectWhereCategory(category);
+        }
         return teams;
     }
 
@@ -80,12 +87,14 @@ public class TeamPlayerModel {
      *
      * @param team the team to add
      * @return 1 if successfully added, or -1 otherwise
-     * @throws DuplicateExeception if team name already exists a exception will
-     * be throw
+     * @throws AlreadyExistsTeam if team name already exists an exception will
+     * be thrown
      */
-    public int addTeam(Team team) throws DuplicateExeception{
+    public int addTeam(Team team) throws AlreadyExistsTeam {
         int result = 0;
-        //TODO
+        if (team != null) {
+            result = teamDao.insert(team);
+        }
         return result;
     }
 
@@ -97,7 +106,9 @@ public class TeamPlayerModel {
      */
     public int modifyTeam(Team team) {
         int result = 0;
-        //TODO
+        if (team != null) {
+            result = teamDao.update(team);
+        }
         return result;
     }
 
@@ -107,9 +118,11 @@ public class TeamPlayerModel {
      * @param team the team to remove
      * @return 1 if successfully removed or -1 in case of error
      */
-    public int removeTeam(Team team) {
+    public int removeTeam(Team team) throws TeamHavePlayers {
         int result = 0;
-        //TODO
+        if (team != null) {
+            result = teamDao.delete(team);
+        }
         return result;
     }
 
@@ -121,7 +134,9 @@ public class TeamPlayerModel {
      */
     public Player findPlayerById(long id) {
         Player player = null;
-        //TODO
+        if (id != 0) {
+            player = playerDao.selectWhereId(id);
+        }
         return player;
     }
 
@@ -132,8 +147,10 @@ public class TeamPlayerModel {
      * @return a list of players with the given full name
      */
     public Player findPlayerByFullName(String fullname) {
-        Player player = null;
-        //TODO
+        Player player= null;
+        if (fullname != null) {
+            player = playerDao.selectWhereName(fullname);
+        }
         return player;
     }
 
@@ -146,7 +163,9 @@ public class TeamPlayerModel {
      */
     public List<Player> findPlayersByTeam(Team team) {
         List<Player> players = null;
-        //TODO
+        if (team != null) {
+            players = playerDao.selectWhereTeamId(team.getId());
+        }
         return players;
     }
 
@@ -155,12 +174,14 @@ public class TeamPlayerModel {
      *
      * @param player is the player to add
      * @return 1 if successfully added or -1 otherwise
-     * @throws DuplicateExeception if team name given is null or if player
-     * already exists in data source a exception will be throw
+     * @throws AlreadyExistsPlayer if player name given is null or if player
+     * already exists in data source an exception will be thrown.
      */
-    public int addPlayer(Player player) throws DuplicateExeception {
+    public int addPlayer(Player player) throws AlreadyExistsPlayer {
         int result = 0;
-        //TODO
+        if (player != null) {
+            result = playerDao.insert(player);
+        }
         return result;
     }
 
@@ -172,7 +193,9 @@ public class TeamPlayerModel {
      */
     public int modifyPlayer(Player player) {
         int result = 0;
-        //TODO
+        if (player != null) {
+            result = playerDao.update(player);
+        }
         return result;
     }
 
@@ -187,7 +210,9 @@ public class TeamPlayerModel {
      */
     public int enrolPlayerToTeam(Team team, Player player) throws AlreadyEnrolled {
         int result = 0;
-        //TODO
+        if (team != null && player != null) {
+            player.setIdTeam(team.getId());
+        }
         return result;
     }
 
@@ -200,7 +225,9 @@ public class TeamPlayerModel {
      */
     public int unenrolPlayerToTeam(Team team, Player player) {
         int result = 0;
-        //TODO
+        if (team != null && player != null) {
+            player.setIdTeam(0);
+        }
         return result;
     }
 }

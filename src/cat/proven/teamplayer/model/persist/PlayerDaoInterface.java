@@ -1,7 +1,6 @@
 package cat.proven.teamplayer.model.persist;
 
 import cat.proven.teamplayer.exceptions.AlreadyExistsPlayer;
-import cat.proven.teamplayer.exceptions.ParameterNull;
 import cat.proven.teamplayer.model.Player;
 import java.util.List;
 
@@ -35,7 +34,7 @@ public interface PlayerDaoInterface {
      * @return a list of players or empty in case not found, null in case of
      * error
      */
-    public List<Player> selectWhereName(String name);
+    public Player selectWhereName(String name);
 
     /**
      * Selects player given team ID

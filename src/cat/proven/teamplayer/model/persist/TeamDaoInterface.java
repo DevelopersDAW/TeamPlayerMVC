@@ -1,7 +1,6 @@
 package cat.proven.teamplayer.model.persist;
 
 import cat.proven.teamplayer.exceptions.AlreadyExistsTeam;
-import cat.proven.teamplayer.exceptions.ParameterNull;
 import cat.proven.teamplayer.exceptions.TeamHavePlayers;
 import cat.proven.teamplayer.model.Team;
 import java.util.List;

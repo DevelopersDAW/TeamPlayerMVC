@@ -1,7 +1,6 @@
 package cat.proven.teamplayer.model.persist;
 
 import cat.proven.teamplayer.exceptions.AlreadyExistsPlayer;
-import cat.proven.teamplayer.exceptions.ParameterNull;
 import cat.proven.teamplayer.model.Player;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +44,7 @@ public class PlayerDaoList implements PlayerDaoInterface {
     }
 
     @Override
-    public List<Player> selectWhereName(String name) {
+    public Player selectWhereName(String name) {
         //TODO
         return null;
     }
