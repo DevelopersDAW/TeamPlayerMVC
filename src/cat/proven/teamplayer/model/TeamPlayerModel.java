@@ -165,7 +165,7 @@ public class TeamPlayerModel {
      * @return 1 if successfully added or -1 otherwise
      * @throws DuplicateExeception if team name given is null or if player
      * already exists in data source a exception will be throw
-     * @throws ParameterNull if player given is null a exception will be throw
+     * @throws ParameterNull if player given is null an exception will be thrown
      */
     public int addPlayer(Player player) throws DuplicateExeception, ParameterNull {
         int result = 0;
@@ -178,8 +178,8 @@ public class TeamPlayerModel {
      *
      * @param player is the player to modify
      * @return 1 if successfully modified or -1 otherwise
-     * @throws ParameterNull if team name given is null a exception will be
-     * throw
+     * @throws ParameterNull if team name given is null an exception will be
+     * thrown
      */
     public int modifyPlayer(Player player) throws ParameterNull {
         int result = 0;
@@ -197,7 +197,7 @@ public class TeamPlayerModel {
      * @throws AlreadyEnrolled if player is already enrolled a exception will be
      * throw
      */
-    public int enrolPlayerToTeam(Team team, Player player) throws ParameterNull, AlreadyEnrolled {
+    public int enrollPlayerToTeam(Team team, Player player) throws ParameterNull, AlreadyEnrolled {
         int result = 0;
         //TODO
         return result;
@@ -212,7 +212,7 @@ public class TeamPlayerModel {
      * @throws ParameterNull if team or player given are null a exception will
      * be throw
      */
-    public int unenrolPlayerToTeam(Team team, Player player) throws ParameterNull {
+    public int unenrollPlayerToTeam(Team team, Player player) throws ParameterNull {
         int result = 0;
         //TODO
         return result;
