@@ -34,7 +34,7 @@ public interface PlayerDaoInterface {
      * @return a list of players or empty in case not found, null in case of
      * error
      */
-    public Player selectWhereName(String name);
+    public List<Player> selectWhereName(String name);
 
     /**
      * Selects player given team ID

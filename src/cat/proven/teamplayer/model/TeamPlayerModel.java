@@ -147,11 +147,11 @@ public class TeamPlayerModel {
      * @return a list of players with the given full name
      */
     public Player findPlayerByFullName(String fullname) {
-        Player player= null;
+        List<Player> players = null;
         if (fullname != null) {
-            player = playerDao.selectWhereName(fullname);
+            players = playerDao.selectWhereName(fullname);
         }
-        return player;
+        return players;
     }
 
     /**

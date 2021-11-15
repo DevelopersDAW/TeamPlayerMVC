@@ -44,7 +44,7 @@ public class PlayerDaoList implements PlayerDaoInterface {
     }
 
     @Override
-    public Player selectWhereName(String name) {
+    public List<Player> selectWhereName(String name) {
         //TODO
         return null;
     }
