@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class TeamPlayerModel {
 
-    // DAO for Friend objects
+    // DAO for Player & Team objects
     private final PlayerDaoInterface playerDao;
     private final TeamDaoInterface teamDao;
 
@@ -30,13 +30,10 @@ public class TeamPlayerModel {
 
     /**
      * Retrieves a list of all teams from data source.
-     *
      * @return list of all teams or null if there aren't teams
      */
     public List<Team> findAllTeams() {
-        List<Team> teams = null;
-        teams = teamDao.selectAll();
-        return teams;
+        return teamDao.selectAll();
     }
 
     /**

@@ -33,32 +33,52 @@ public class PlayerDaoList implements PlayerDaoInterface {
 
     @Override
     public List<Player> selectAll() {
-        //TODO
-        return null;
+        return data;
     }
 
     @Override
     public Player selectWhereId(long id) {
-        //TODO
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).getId() == id){
+                return data.get(i);
+            }
+        }
         return null;
     }
 
     @Override
     public List<Player> selectWhereName(String name) {
-        //TODO
-        return null;
+        List<Player> coincidence = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).getName() == name){
+                coincidence.add((data.get(i)));
+            }
+        }
+        return coincidence;
     }
 
     @Override
     public List<Player> selectWhereTeamId(long teamId) {
-        //TODO
-        return null;
+        List<Player> coincidence = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).getIdTeam() == teamId){
+                coincidence.add((data.get(i)));
+            }
+        }
+        return coincidence;
     }
 
     @Override
     public int insert(Player player)throws AlreadyExistsPlayer {
-        //TODO
-        return 0;
+        for (int i = 0; i < data.size(); i++) {
+            if(data.get(i).equals(player)){
+                return -1;
+            } else {
+                data.add(player);
+                return 1;
+            }
+        }
+        return -1;
 
     }
 
