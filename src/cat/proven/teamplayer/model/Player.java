@@ -15,6 +15,22 @@ public class Player {
     private double salary;
     private long idTeam;
 
+    public Player() {
+    }
+
+    public Player(long id) {
+        this.id = id;
+    }
+
+    public Player(long id, String name, String surname, Date birthdate, double salary, long idTeam) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.birthdate = birthdate;
+        this.salary = salary;
+        this.idTeam = idTeam;
+    }
+
     public long getId() {
         return id;
     }

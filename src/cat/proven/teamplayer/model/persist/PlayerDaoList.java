@@ -2,7 +2,9 @@ package cat.proven.teamplayer.model.persist;
 
 import cat.proven.teamplayer.exceptions.AlreadyExistsPlayer;
 import cat.proven.teamplayer.model.Player;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,10 +20,17 @@ public class PlayerDaoList implements PlayerDaoInterface {
 
     private PlayerDaoList() {
         this.data = new ArrayList<>();
+        initData();
     }
-
+    private void initData() {
+        data.add(new Player(1, "Jordi", "Rocha", new Date(), 1200, 1));
+        data.add(new Player(2, "R", "R", new Date(), 1200, 1));
+        data.add(new Player(3, "L", "L", new Date(), 1200, 1));
+        data.add(new Player(4, "B", "B", new Date(), 1200, 1));
+    }
     /**
      * Implements singleton pattern
+     *
      * @return current instance
      */
     public static PlayerDaoList getInstance() {
@@ -39,7 +48,7 @@ public class PlayerDaoList implements PlayerDaoInterface {
     @Override
     public Player selectWhereId(long id) {
         for (int i = 0; i < data.size(); i++) {
-            if (data.get(i).getId() == id){
+            if (data.get(i).getId() == id) {
                 return data.get(i);
             }
         }
@@ -50,7 +59,7 @@ public class PlayerDaoList implements PlayerDaoInterface {
     public List<Player> selectWhereName(String name) {
         List<Player> coincidence = new ArrayList<>();
         for (int i = 0; i < data.size(); i++) {
-            if (data.get(i).getName() == name){
+            if (data.get(i).getName() == name) {
                 coincidence.add((data.get(i)));
             }
         }
@@ -61,7 +70,7 @@ public class PlayerDaoList implements PlayerDaoInterface {
     public List<Player> selectWhereTeamId(long teamId) {
         List<Player> coincidence = new ArrayList<>();
         for (int i = 0; i < data.size(); i++) {
-            if (data.get(i).getIdTeam() == teamId){
+            if (data.get(i).getIdTeam() == teamId) {
                 coincidence.add((data.get(i)));
             }
         }
@@ -69,17 +78,13 @@ public class PlayerDaoList implements PlayerDaoInterface {
     }
 
     @Override
-    public int insert(Player player)throws AlreadyExistsPlayer {
-        for (int i = 0; i < data.size(); i++) {
-            if(data.get(i).equals(player)){
-                return -1;
-            } else {
-                data.add(player);
-                return 1;
-            }
+    public int insert(Player player) throws AlreadyExistsPlayer {
+        if (data.contains(player)) {
+            throw new AlreadyExistsPlayer("Player already exists");
+        } else {
+            data.add(player);
+            return 1;
         }
-        return -1;
-
     }
 
     @Override

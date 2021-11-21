@@ -12,6 +12,17 @@ public class Team {
     private String category;
     private double budget;
 
+    public Team() {
+    }
+
+    public Team(long id, String name, String coach, String category, double budget) {
+        this.id = id;
+        this.name = name;
+        this.coach = coach;
+        this.category = category;
+        this.budget = budget;
+    }
+
     public long getId() {
         return id;
     }
