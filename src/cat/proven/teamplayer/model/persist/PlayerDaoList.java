@@ -59,7 +59,8 @@ public class PlayerDaoList implements PlayerDaoInterface {
     public List<Player> selectWhereName(String name) {
         List<Player> coincidence = new ArrayList<>();
         for (int i = 0; i < data.size(); i++) {
-            if (data.get(i).getName() == name) {
+            String fullname = data.get(i).getName() + " " + data.get(i).getSurname();
+            if (fullname.equalsIgnoreCase(name)) {
                 coincidence.add((data.get(i)));
             }
         }
@@ -89,14 +90,21 @@ public class PlayerDaoList implements PlayerDaoInterface {
 
     @Override
     public int update(Player player) {
-        //TODO
-        return 0;
+        if (data.contains(player)) {
+            int index = data.indexOf(player);
+            data.set(index, player);
+            return 1;
+        }
+        return -1;
     }
 
     @Override
     public int delete(Player player) {
-        //TODO
-        return 0;
+        if(data.contains(player)){
+            data.remove(player);
+            return 1;
+        }
+        return -1;
     }
 
 }

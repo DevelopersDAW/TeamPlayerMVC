@@ -93,14 +93,18 @@ public class TeamDaoList implements TeamDaoInterface {
         if (data.contains(team)) {
             int index = data.indexOf(team);
             data.set(index, team);
+            return 1;
         }
-        return 0;
+        return -1;
     }
 
     @Override
     public int delete(Team team) throws TeamHavePlayers {
-        data.remove(team);
-        return 0;
+        if(data.contains(team)){
+            data.remove(team);
+            return 1;
+        }
+        return -1;
     }
 
 }

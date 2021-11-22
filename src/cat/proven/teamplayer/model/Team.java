@@ -1,5 +1,7 @@
 package cat.proven.teamplayer.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author Jordi and David
@@ -61,5 +63,18 @@ public class Team {
 
     public void setBudget(double budget) {
         this.budget = budget;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Team team = (Team) o;
+        return id == team.id || Objects.equals(name, team.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }

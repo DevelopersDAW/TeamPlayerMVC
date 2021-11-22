@@ -8,6 +8,8 @@ import cat.proven.teamplayer.model.persist.PlayerDaoInterface;
 import cat.proven.teamplayer.model.persist.PlayerDaoList;
 import cat.proven.teamplayer.model.persist.TeamDaoInterface;
 import cat.proven.teamplayer.model.persist.TeamDaoList;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -67,7 +69,7 @@ public class TeamPlayerModel {
     /**
      * Retrieves a list with given category
      *
-     * @param category the categoy to search teams
+     * @param category the category to search teams
      * @return a list of teams given a category, null list in case not found
      */
     public List<Team> findTeamsByCategory(String category) {
@@ -144,7 +146,7 @@ public class TeamPlayerModel {
      * @return a list of players with the given full name
      */
     public List<Player> findPlayerByFullName(String fullname) {
-        List<Player> players = null;
+        List<Player> players = new ArrayList<>();
         if (fullname != null) {
             players = playerDao.selectWhereName(fullname);
         }
